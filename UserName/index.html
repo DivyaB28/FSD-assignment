@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Fraunces&display=swap");
+      body {
+        font-family: "Montserrat", serif;
+        font-weight: 400;
+        display: flex;
+        justify-content: space-around;
+      }
+      .register-form-card {
+        min-width: 20rem;
+        min-height: 15rem;
+        position: absolute;
+        top: 5rem;
+        background-color: #fff;
+        display: flex;
+        flex-flow: row-reverse wrap;
+        align-items: center;
+        border-radius: 1em;
+      }
+      .form-header {
+        color: #fff;
+        font-family: "Fraunces", serif;
+        font-weight: 700;
+        font-size: 1em;
+        margin-left: 1em;
+        border-radius: 0 1em 1em 0;
+        align-self: stretch;
+        background-image: linear-gradient(180deg, #ef8126, #f13737);
+      }
+      h1,
+      p {
+        position: relative;
+        top: 5em;
+        padding: 1em;
+        line-height: 2em;
+      }
+      body {
+        background-color: #372f32;
+      }
+      .form-field {
+        margin-right: 1rem;
+        padding: 1rem;
+        min-width: 20rem;
+      }
+      h2 {
+        text-align: center;
+      }
+      label {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        font-weight: bold;
+      }
+      input,select {
+        padding: 0.5em;
+        margin: 0.5em 0;
+        justify-items: center;
+      }
+      #gender-radio {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+      }
+      .button-class {
+        display: flex;
+        flex-direction: row;
+      }
+      button {
+        width: 50%;
+        background-color: #5950A9;
+        color: aliceblue;
+        font-family: "Montserrat", serif;
+        font-size: 1em;
+        padding: 0.5em;
+        margin: 1rem;
+        border: 0.5em solid #5950A9;
+        border-radius: 0.5em;
+      }
+      textarea{
+        min-height: 5rem;
+      }
+      a{
+        color: #ef8126;
+      }
+      #footer{
+        text-align: center;
+      }
+    </style>
+   
+  </head>
+  <body>
+    <div class="register-form-card">
+      <div class="form-header">
+        <h1>Register here!</h1>
+        <p>Please fill out this form with required information</p>
+      </div>
+      <div class="form-field">
+        <h2>Personal Info</h2>
+        <form>
+          <label for="fullName"
+            >Full Name*
+            <input id="fullName" type="text" name="firstName" required />
+          </label>
+          <label for="email"
+            >Email id*
+            <input id="email" type="email" name="email" required placeholder="e.g., example@gmail.com"/>
+          </label> 
+          <label for="userName">
+            User Name 
+            <input id="userName" type="text" name="userName" onclick="getUserName()"/>
+          </label>     
+          <label for="mobile"
+            >Phone number
+            <input id="mobile" type="number" name="mobile"/>
+          </label>
+          <label for="dob"
+            >Date of birth
+            <input id="dob" type="date" name="dob" />
+          </label>
+          <label for="gender" id="gender-radio"
+          >Gender
+          <input id="gender" type="radio" name="gender" >Male</input>
+          <input id="gender" type="radio" name="gender" >Female</input>
+          <input id="gender" type="radio" name="gender" >Others</input>
+          </label>
+          <label for="country">Nationality
+            <select id="country" name="country">
+             <option value="">(select one)</option>
+             <option value="1">India</option>
+             <option value="2">USA</option>
+             <option value="3">Others</option>
+         </select>
+        <!-- <input  id="country" name="country" list="countries">
+        <datalist id ="countries">
+                  <option value="India"></option>
+                  <option value="USA"></option>
+                  <option value="Others"></option>
+        </datalist>
+        </input> -->
+        </label>
+        <!-- <label for="profile-photo">Profile Photo:
+          <input id="profile-photo" type="file"></input>
+        </label> -->
+        <label for="textarea">How did you get to know about us?*
+          <textarea id="textarea" placeholder="We would be happy to know..." required></textarea>
+          </label>
+        <div class="button-class">
+        <button type="reset">Reset</button>
+          <button type="submit">Register</button>
+          </div>
+         
+        </form>
+        <span id="footer">By clicking on Register you are agreeing to <a href="#termsAndConditions" target="_blank">our terms and conditions!</a></span>
+      </div>
+    </div>
+    <script src="4-userName.js"></script>
+  </body>
+</html>

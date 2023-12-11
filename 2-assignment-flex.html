@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex-uscase</title>
+    <style>
+      body {
+        background: linear-gradient(90deg, rgb(245, 241, 241), #d4caca);
+        margin-top: 3em;
+      }
+      .flex-container {
+        display: flex;
+        flex-flow: column wrap;
+      }
+      .row {
+        display: flex;
+      }
+      .row-1,
+      .row-3 {
+        justify-content: space-around;
+      }
+      .row-2 {
+        justify-content: center;
+      }
+
+      .items {
+        width: 200px;
+        height: 200px;
+        background-color: rgb(183, 149, 64);
+        border-radius: 10%;
+      }
+      .items:hover {
+        cursor: pointer;
+        box-shadow: 0 0 13px 0 rgb(175, 134, 30);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="row row-1">
+        <div class="items"></div>
+        <div class="items"></div>
+      </div>
+      <div class="row row-2"><div class="items item-3"></div></div>
+      <div class="row row-3">
+        <div class="items"></div>
+        <div class="items"></div>
+      </div>
+    </div>
+  </body>
+</html>
