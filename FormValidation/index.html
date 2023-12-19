@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <title>Validation Form</title>
+  </head>
+  <body>
+    <!-- withfields Username,EmailAddress,Password,
+     Phone Number, Gender - Male/Female/Others, and Country - India, USA, Others. -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="text-center my-sm-3 my-lg-4">Registration Form</h1>
+        </div>
+      </div>
+      <form class="row">
+        <div id="userNameDiv" class="col-12 mb-3">
+          <label for="forUserName" class="form-label form-label-lg"
+            >Name*</label
+          >
+          <input
+            id="forUserName"
+            class="form-control"
+            type="text"
+            placeholder="Enter your full name"
+            aria-labelledby="User name input"
+            required=""
+            name="name"
+          />
+        </div>
+        <div id="userEmailId" class="col-12 mb-3">
+          <label for="forEmailAddress" class="form-label form-label-lg"
+            >Email Address*</label
+          >
+          <input
+            id="forEmailAddress"
+            class="form-control"
+            type="email"
+            placeholder="example@gmail.com"
+            aria-labelledby="User email input"
+            required
+            title="Your email"
+            name="email"
+          />
+        </div>
+        <div id="userPassword" class="col-12 mb-3">
+          <label for="forPassword" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="forPassword"
+            aria-labelledby="User form password"
+            required=""
+            value=""
+            name="password"
+          />
+          <div id="passwordHelpBlock" class="form-text">
+            Your password must be 8 characters long, contain letters, numbers
+            and atleast 1 special character and must not contain spaces or
+            emoji.
+          </div>
+        </div>
+        <div class="col-12 mb-4">
+          <label for="forSelectCountry" class="form-label"
+            >Country of Origin*</label
+          >
+          <select
+            id="forSelectCountry"
+            class="form-select"
+            aria-label="Select dropdown for Country"
+            required=""
+            name="country"
+          >
+            <option selected disabled value="">Open dropdown</option>
+            <option value="india">India</option>
+            <option value="usa">USA</option>
+            <option value="">Others</option>
+          </select>
+        </div>
+        <div id="userPhoneNumber" class="col-12 mb-3">
+          <label for="forPhoneNumber" class="form-label">Phone number*</label>
+          <div class="input-group">
+            <span class="input-group-text">+</span>
+            <input
+              id="forPhoneNumber"
+              type="tel"
+              class="form-control"
+              aria-labelledby="user phone number"
+              required=""
+              name="phone"
+            />
+          </div>
+        </div>
+        <div class="col-12 mb-3">
+          <label for="forGender" class="form-control-plaintext">Gender*</label>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="genderoptions"
+              id="optionMale"
+              value="male"
+              required=""
+              name="gender"
+            />
+            <label class="form-check-label" for="optionMale">Male</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="genderoptions"
+              id="optionFemale"
+              value="female"
+              required=""
+              name="gender"
+            />
+            <label class="form-check-label" for="optionFemale">Female</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="genderoptions"
+              id="optionOthers"
+              value="others"
+              required=""
+              name="gender"
+            />
+            <label class="form-check-label" for="optionOthers">Others</label>
+          </div>
+        </div>
+        <div class="d-grid gap-2 col-3 mx-auto mb-5">
+          <button class="btn btn-primary" type="submit">Register</button>
+          <button class="btn btn-primary" type="reset">Reset</button>
+        </div>
+      </form>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="formValidate.js"></script>
+  </body>
+</html>
