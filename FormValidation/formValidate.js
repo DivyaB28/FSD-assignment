@@ -6,13 +6,14 @@ toValidateInput("forPassword", "userPassword");
 toValidateInput("forPhoneNumber", "userPhoneNumber");
 
 function removeElement(id) {
-  var elem = document.getElementById(id);
-  return elem.parentNode.removeChild(elem);
+  var elem = document.getElementsByClassName(id);
+  console.log([...elem]);
+  return [...elem].map((n) => n && n.remove());
 }
 
 // storing all the regex in object
 const REGEXOBJ = {
-  forUserName: "^[a-zA-Z0-9_ ]+$",
+  forUserName: "^[a-zA-Z0-9_]+$",
   forEmailAddress: "^[a-zA-Z0-9. _-]+@[a-zA-Z0-9. -]+.[a-zA-Z]{2,4}$",
   forPassword:
     "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$",
@@ -54,8 +55,10 @@ function toValidateInput(idName, parentDivId) {
     //Getting the regex based on idName
     if (idName === "forPhoneNumber" && countryOpted !== "") {
       regexString = REGEXOBJ[idName][countryOpted];
-    } else {
+    } else if (idName === "forPhoneNumber" && countryOpted === "") {
       regexString = REGEXOBJ[idName]["india"];
+    } else {
+      regexString = REGEXOBJ[idName];
     }
 
     let regex = new RegExp(regexString);
@@ -72,7 +75,7 @@ function toValidateInput(idName, parentDivId) {
       parentDivElem.append(div);
     } else {
       //removing error message if regex test passes
-      removeElement("errorMessage");
+      removeElement("text-danger");
     }
   });
 }
